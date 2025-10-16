@@ -1,1 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оператори пошуку Google - Таблиця з завданнями</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3436;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #636e72;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .category-section {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        th:first-child { width: 15%; }
+        th:nth-child(2) { width: 25%; }
+        th:nth-child(3) { width: 30%; }
+        th:nth-child(4) { width: 30%; }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        
+        tr:hover td {
+            background: #f8f9fa;
+            transition: background 0.3s ease;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .operator {
+            font-family: 'Courier New', monospace;
+            background: #6c5ce7;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.95em;
+        }
+        
+        .example {
+            font-family: 'Courier New', monospace;
+            background: #f0f3f7;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+            color: #2d3436;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+            word-break: break-word;
+        }
+        
+        .task {
+            background: #ffeaa7;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 3px solid #fdcb6e;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        
+        .solution {
+            font-family: 'Courier New', monospace;
+            background: #55efc4;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 3px solid #00b894;
+            color: #00695c;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-top: 5px;
+            word-break: break-word;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Оператори пошуку Google</h1>
+        <p class="subtitle">Стань майстром пошуку в інтернеті!</p>
+        
+        <div class="category-section">
+            <div class="category-title">📌 Базові оператори пошуку</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Оператор</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">" "</span></td>
+                        <td>Пошук точної фрази<span class="example">"Гаррі Поттер"</span></td>
+                        <td><div class="task">Знайдіть точну назву казки "Хлопчик-мізинчик"</div></td>
+                        <td><div class="solution">"Хлопчик-мізинчик"</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">-</span></td>
+                        <td>Виключення слів<span class="example">дельфін -футбол</span></td>
+                        <td><div class="task">Знайдіть інформацію про планету Марс, але без фільмів і мультфільмів</div></td>
+                        <td><div class="solution">Марс планета -фільм -мультфільм</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">*</span></td>
+                        <td>Заміна невідомого слова<span class="example">найкращий * у світі</span></td>
+                        <td><div class="task">Знайдіть цитату "Щастя це коли тебе *" (забули кінець)</div></td>
+                        <td><div class="solution">"Щастя це коли тебе *"</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">OR</span></td>
+                        <td>Один з варіантів<span class="example">собака OR пес</span></td>
+                        <td><div class="task">Знайдіть рецепти млинців або налисників</div></td>
+                        <td><div class="solution">рецепт млинці OR налисники</div></td>
+                    </tr>
+ова присутність обох слів<span class="example">Minecraft AND поради</span></td>
+                        <td><div class="task">Знайдіть статті де згадується і Тарас Шевченко і Кобзар</div></td>
+                        <td><div class="solution">"Тарас Шевченко" AND Кобзар</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+        <div class="category-section">
+            <div class="category-title">🌐 Оператори для пошуку на сайтах</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Оператор</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">site:</span></td>
+                        <td>Пошук на конкретному сайті<span class="example">site:wikipedia.org динозаври</span></td>
+                        <td><div class="task">Знайдіть статті про котів тільки на Вікіпедії</div></td>
+                        <td><div class="solution">site:wikipedia.org коти</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">related:</span></td>
+                        <td>Схожі сайти<span class="example">related:youtube.com</span></td>
+                        <td><div class="task">Знайдіть сайти схожі на YouTube</div></td>
+                        <td><div class="solution">related:youtube.com</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">cache:</span></td>
+                        <td>Кешована версія<span class="example">cache:example.com</span></td>
+                        <td><div class="task">Подивіться збережену версію сайту National Geographic</div></td>
+                        <td><div class="solution">cache:nationalgeographic.com</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">📄 Оператори для типів контенту</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Оператор</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">filetype:</span></td>
+                        <td>Пошук файлів певного формату<span class="example">filetype:pdf казки</span></td>
+                        <td><div class="task">Знайдіть PDF-книжки з українськими народними казками</div></td>
+                        <td><div class="solution">filetype:pdf українські народні казки</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">ext:</span></td>
+                        <td>Альтернатива для filetype<span class="example">ext:ppt презентація</span></td>
+                        <td><div class="task">Знайдіть PowerPoint презентації про Сонячну систему</div></td>
+                        <td><div class="solution">ext:ppt Сонячна система</div></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">📝 Оператори для тексту на сторінці</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Оператор</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">intitle:</span></td>
+                        <td>Слово в заголовку<span class="example">intitle:рецепт</span></td>
+                        <td><div class="task">Знайдіть сторінки з словом "експерименти" в заголовку для дітей</div></td>
+                        <td><div class="solution">intitle:експерименти для дітей</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">allintitle:</span></td>
+                        <td>Всі слова в заголовку<span class="example">allintitle:цікаві факти тварини</span></td>
+                        <td><div class="task">Знайдіть сторінки де в заголовку є і "Minecraft" і "поради" і "початківцям"</div></td>
+                        <td><div class="solution">allintitle:Minecraft поради початківцям</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">inurl:</span></td>
+                        <td>Слово в URL<span class="example">inurl:games</span></td>
+                        <td><div class="task">Знайдіть сторінки з іграми (games в адресі)</div></td>
+                        <td><div class="solution">inurl:games безкоштовні</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">allinurl:</span></td>
+                        <td>Всі слова в URL<span class="example">allinurl:free games</span></td>
+                        <td><div class="task">Знайдіть сторінки де в адресі є "kids" і "videos"</div></td>
+                        <td><div class="solution">allinurl:kids videos</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">intext:</span></td>
+                        <td>Слово в тексті сторінки<span class="example">intext:динозаври</span></td>
+                        <td><div class="task">Знайдіть сторінки де в тексті згадується "Гаррі Поттер"</div></td>
+                        <td><div class="solution">intext:"Гаррі Поттер"</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">allintext:</span></td>
+                        <td>Всі слова в тексті<span class="example">allintext:космос планети зірки</span></td>
+                        <td><div class="task">Знайдіть сторінки де в тексті є і "дельфіни" і "океан" і "розумні"</div></td>
+                        <td><div class="solution">allintext:дельфіни океан розумні</div></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">🔧 Спеціальні команди Google</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">define:</span></td>
+                        <td>Визначення слова (показує швидку відповідь)<span class="example">define:екосистема</span></td>
+                        <td><div class="task">Знайдіть визначення слова "гравітація"</div></td>
+                        <td><div class="solution">define:гравітація</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">weather:</span></td>
+                        <td>Погода в локації (віджет погоди)<span class="example">weather:Київ</span></td>
+                        <td><div class="task">Дізнайтеся погоду у Львові</div></td>
+                        <td><div class="solution">weather:Львів</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">stocks:</span></td>
+                        <td>Інформація про акції (віджет котирувань)<span class="example">stocks:AAPL</span></td>
+                        <td><div class="task">Перевірте вартість акцій компанії Disney</div></td>
+                        <td><div class="solution">stocks:DIS</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">map:</span></td>
+                        <td>Карта локації (віджет карти)<span class="example">map:Одеса</span></td>
+                        <td><div class="task">Покажіть карту Карпат</div></td>
+                        <td><div class="solution">map:Карпати</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">movie:</span></td>
+                        <td>Інформація про фільми (віджет з інформацією)<span class="example">movie:Аватар</span></td>
+                        <td><div class="task">Знайдіть інформацію про фільм "Людина-павук"</div></td>
+                        <td><div class="solution">movie:Людина-павук</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">source:</span></td>
+                        <td>Новини з джерела (працює в Google News)<span class="example">source:BBC спорт</span></td>
+                        <td><div class="task">Знайдіть новини про космос від National Geographic в Google News</div></td>
+                        <td><div class="solution">source:"National Geographic" космос</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">before:</span></td>
+                        <td>Результати до певної дати<span class="example">before:2023-01-01</span></td>
+                        <td><div class="task">Знайдіть старі статті про динозаврів (до 2020 року)</div></td>
+                        <td><div class="solution">динозаври before:2020-01-01</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">after:</span></td>
+                        <td>Результати після певної дати<span class="example">after:2024-01-01</span></td>
+                        <td><div class="task">Знайдіть нові відкриття про космос після 2024 року</div></td>
+                        <td><div class="solution">космос відкриття after:2024-01-01</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">🎯 Символи та модифікатори</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Оператор</th>
+                        <th>Опис</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">@</span></td>
+                        <td>Пошук в соцмережах<span class="example">@instagram</span></td>
+                        <td><div class="task">Знайдіть пости про котиків в Instagram</div></td>
+                        <td><div class="solution">@instagram котики</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">#</span></td>
+                        <td>Пошук хештегів<span class="example">#природа</span></td>
+                        <td><div class="task">Знайдіть пости з хештегом #школа</div></td>
+                        <td><div class="solution">#школа #5клас</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">$</span></td>
+                        <td>Пошук цін<span class="example">велосипед $200</span></td>
+                        <td><div class="task">Знайдіть Nintendo Switch за ціною $300</div></td>
+                        <td><div class="solution">Nintendo Switch $300</div></td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">AROUND(X)</span></td>
+                        <td>Близькість слів<span class="example">Україна AROUND(3) перемога</span></td>
+                        <td><div class="task">Знайдіть статті де "Тарас Шевченко" і "поет" згадуються поруч (в межах 5 слів)</div></td>
+                        <td><div class="solution">"Тарас Шевченко" AROUND(5) поет</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="category-section">
+            <div class="category-title">🎓 Комбіновані завдання</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Складність</th>
+                        <th>Завдання</th>
+                        <th>Рішення</th>
+                        <th>Пояснення</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="operator">Легка</span></td>
+                        <td><div class="task">Знайдіть рецепти піци або бургера без м'яса</div></td>
+                        <td><div class="solution">(піца OR бургер) рецепт -м'ясо</div></td>
+                        <td>Комбінація OR та виключення (-)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">Середня</span></td>
+                        <td><div class="task">Знайдіть PDF-книжки з казками на сайтах бібліотек</div></td>
+                        <td><div class="solution">site:.lib.ua filetype:pdf казки дітям</div></td>
+                        <td>Комбінація site: та filetype:</td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">Висока</span></td>
+                        <td><div class="task">Знайдіть статті про Minecraft на Wikipedia або fandom.com, але не про мобів</div></td>
+                        <td><div class="solution">(site:wikipedia.org OR site:fandom.com) Minecraft -моби</div></td>
+                        <td>Використання OR, site: та виключення</td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">Експерт</span></td>
+                        <td><div class="task">Знайдіть презентації про планети для дітей, створені після 2023 року, де в заголовку є "космос", але не від NASA</div></td>
+                        <td><div class="solution">intitle:космос filetype:ppt планети діти after:2023-01-01 -site:nasa.gov</div></td>
+                        <td>Комплексне поєднання 5 операторів</td>
+                    </tr>
+                    <tr>
+                        <td><span class="operator">Майстер</span></td>
+                        <td><div class="task">Знайдіть статті про Minecraft на Wikipedia або fandom.com з порадами для початківців, але без згадки про сервери</div></td>
+                        <td><div class="solution">(site:wikipedia.org OR site:fandom.com) Minecraft початківці поради -сервери</div></td>
+                        <td>Максимальна комбінація операторів для точного пошуку</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
